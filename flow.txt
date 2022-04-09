@@ -1,0 +1,6 @@
+1.connect react to firebase 
+2.git publish 
+3.animated icon svg 
+4.material ui import 
+5.main page template 
+6.temp images for main page 
