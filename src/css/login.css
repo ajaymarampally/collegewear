@@ -13,6 +13,15 @@
   align-items: center;
 }
 
+.signup-page-component{
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 .login-card{
   width:100%;
   height: auto;

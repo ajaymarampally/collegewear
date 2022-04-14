@@ -116,12 +116,12 @@ function Header(){
                   />
                 </li>
                 <li>
-                  <a href="/">
+                  <a href="/cart">
                       <img className="svg" src={cart_svg} alt="CART_ICON"/>
                   </a>
                 </li>
                 <li>
-                   <a href="/">
+                   <a href="/login">
                       <img className="svg" src={user_svg} alt="USER_ICON"/> 
                     </a> 
                 </li>

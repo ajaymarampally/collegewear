@@ -17,8 +17,7 @@ class Signup extends React.Component{
 
     render(){
         return(
-            <><div>
-            </div>
+            <>
             <div className='signup-component'>
                 <div className='signup-inside-component m-4'>
                     <h1 className='m-4'>Create an Account</h1>
