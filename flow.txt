@@ -4,3 +4,74 @@
 4.material ui import 
 5.main page template 
 6.temp images for main page 
+
+
+        <div className="container-fluid">
+                <header>
+                    <div id="header">
+                    <nav className="navbar navbar-expand-md navbar-dark navcss">
+                    <div className="container-fluid">
+                        <div className="navbar-brand logo">U-Store</div>
+                            <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
+                                <li className="nav-item">
+                                        <SlDropdown>
+                                        <SlButton slot="trigger" caret>
+                                            Men
+                                        </SlButton>
+                                        <SlMenu>
+                                            <SlMenuItem>T-Shirts</SlMenuItem>
+                                            <SlMenuItem>Hoodies</SlMenuItem>
+                                            <SlMenuItem>Jeans</SlMenuItem>
+                                        <SlDivider />
+                                        <SlMenuItem>
+                                            Leave a Like :)
+                                            <SlIcon slot="suffix" name="heart" />
+                                        </SlMenuItem>
+                                        </SlMenu>
+                                    </SlDropdown>
+                                </li>
+                                <li className="nav-item">
+                                <SlDropdown>
+                                <SlButton slot="trigger" caret>
+                                    Women
+                                </SlButton>
+                                <SlMenu>
+                                    <SlMenuItem>T-Shirts</SlMenuItem>
+                                    <SlMenuItem>Hoodies</SlMenuItem>
+                                    <SlMenuItem>Jeans</SlMenuItem>
+                                <SlDivider />
+                                <SlMenuItem>
+                                    Leave a Like :)
+                                    <SlIcon slot="suffix" name="heart" />
+                                </SlMenuItem>
+                                </SlMenu>
+                            </SlDropdown>
+                                </li>
+                                <li className="nav-item">
+                                            <Search
+                                        loading={loading}
+                                        placeholder='Search...'
+                                        onResultSelect={(e, data) =>
+                                        dispatch({ type: 'UPDATE_SELECTION', selection: data.result.title })
+                                        }
+                                        onSearchChange={handleSearchChange}
+                                        results={results}
+                                        value={value}
+                                    />
+                                </li>
+                                <li className="nav-item ">
+                                    <FiShoppingCart/>
+                                </li>
+                                <li className="nav-item ">
+                                    <FaUserAlt />
+                                </li>
+                          </ul>
+                        </div>
+                </nav>
+                    </div>
+                </header>
+        </div>
+		
+		
+color-prim : #008AB0
+color - icon -bg : #00627D
