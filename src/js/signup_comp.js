@@ -33,19 +33,21 @@ class Signup_component extends React.Component{
             </Form.Group>
             <Form.Group className="mb-4" id="email">
               <Form.Label><h2>Full Name</h2></Form.Label>
-              <Form.Control type="email" required />
+              <Form.Control type="name" required />
             </Form.Group>
             <Form.Group className="mb-4" id="email">
               <Form.Label><h2>Choose Password</h2></Form.Label>
-              <Form.Control type="email" required />
+              <Form.Control type="password" required />
             </Form.Group>
             <Form.Group className="mb-4" id="password">
               <Form.Label><h2>Password</h2></Form.Label>
               <Form.Control type="password" required />
             </Form.Group>
-            <Button className="w-100 login-btn mt-4" type="submit">
-              LOG IN
-            </Button>
+            <a href='/login'>
+              <Button className="w-100 login-btn mt-4" type="submit">
+                SIGN UP
+              </Button>
+            </a>
           </Form>
         </Card.Body>
       </Card>   
