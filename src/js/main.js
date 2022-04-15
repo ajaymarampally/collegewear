@@ -147,25 +147,25 @@ function Main(){
           <div className="container-fluid">
           <div className="row justify-content-around m-0 mt-2 fourcol text-center align-items-baseline">
               <div className="col-md-3 col-12 col-sm-6">
-                <a href="/">
+                <a href="/product_desc">
                 <img src={dummy} className="image-thumbnail" alt="T-Shirts"/>
                 <p>T-Shirts</p>
                 </a>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
-                <a href="/">
+                <a href="/product_desc">
                 <img src={dummy} className="image-thumbnail" alt="Jeans"/>
                 <p>Jeans</p>
                 </a>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
-                <a href="/">
+                <a href="/product_desc">
                 <img src={dummy} className="image-thumbnail" alt="pants"/>
                 <p>Pants</p>
                 </a>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
-                <a href="/">
+                <a href="/product_desc">
                 <img src={dummy} className="image-thumbnail" alt="Hoodies"/>
                 <p>Hoodies</p>
                 </a>
@@ -182,25 +182,25 @@ function Main(){
         <div className="container-fluid">
           <div className="row justify-content-around m-0 mt-2 fourcol text-center align-items-baseline">
               <div className="col-md-3 col-12 col-sm-6">
-                <a href="/">
+                <a href="/product_desc">
                 <img src={dummy} className="image-thumbnail" alt="T-Shirts"/>
                 <p>T-Shirts</p>
                 </a>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
-                <a href="/">
+                <a href="/product_desc">
                 <img src={dummy} className="image-thumbnail" alt="Jeans"/>
                 <p>Jeans</p>
                 </a>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
-                <a href="/">
+                <a href="/product_desc">
                 <img src={dummy} className="image-thumbnail" alt="Case"/>
                 <p>Case</p>
                 </a>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
-                <a href="/">
+                <a href="/product_desc">
                 <img src={dummy} className="image-thumbnail" alt="Hoodies"/>
                 <p>Hoodies</p>
                 </a>

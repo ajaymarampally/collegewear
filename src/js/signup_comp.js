@@ -44,7 +44,7 @@ class Signup_component extends React.Component{
               <Form.Control type="password" required />
             </Form.Group>
             <a href='/login'>
-              <Button className="w-100 login-btn mt-4" type="submit">
+              <Button className="w-100 login-btn mt-4">
                 SIGN UP
               </Button>
             </a>

@@ -1,0 +1,30 @@
+.product-desc{
+    margin:0 auto;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    
+}
+
+.verticalLine {
+    border-left: thick solid #000000;
+  }
+
+.img-gallery{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height:auto;
+}
+
+.img-gallery img{
+    width:100%;
+    height:auto;
+    margin: 15px;
+}
+
+.product-desc-container{
+    display:flex;
+    align-items: flex-start;
+    
+}
