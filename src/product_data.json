@@ -68,7 +68,7 @@
         },
         "u_buffalo":{
             "product_name":"University at Buffalo Bulls Short Sleeve T-Shirt",
-            "product_link":"https://raw.githubusercontent.com/ajaymarampally/collegewear/main/src/img/t_shirts/u_buffalo.png",
+            "product_link":"https://raw.githubusercontent.com/ajaymarampally/collegewear/main/src/img/t_shirts/u_buffalo.jpg",
             "product_rating":"3",
             "product_review_cnt":"3",
             "product_price":"$22.50",
@@ -79,7 +79,7 @@
         },
         "u_florida":{
             "product_name":"University of Florida Gators Victory Falls T-Shirt",
-            "product_link":"https://raw.githubusercontent.com/ajaymarampally/collegewear/main/src/img/t_shirts/u_florida.png",
+            "product_link":"https://raw.githubusercontent.com/ajaymarampally/collegewear/main/src/img/t_shirts/u_florida.webp",
             "product_rating":"4.5",
             "product_review_cnt":"3",
             "product_price":"$36",
