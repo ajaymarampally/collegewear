@@ -10,6 +10,7 @@ import dummy from '../img/dummy.png';
 import { Dropdown } from 'semantic-ui-react';
 import { useNavigate } from 'react-router-dom';
 import {Link} from 'react-router-dom';
+import p_d from  '../product_data.json';
 
 function exampleReducer(state, action) {
   switch (action.type) {
@@ -89,18 +90,18 @@ function Main(){
                 <li>
                 <Dropdown text='MEN'>
                   <Dropdown.Menu>
-                    <Dropdown.Item text='T-Shirts' onClick={props.men_drop_down_id.replace('1')}/>
-                    <Dropdown.Item text='Hoodies' onClick={props.men_drop_down_id.replace('2')}/>
-                    <Dropdown.Item text='Jeans' onClick={props.men_drop_down_id.replace('3')}/>
+                    <Dropdown.Item text='T-Shirts'/>
+                    <Dropdown.Item text='Hoodies'/>
+                    <Dropdown.Item text='Jeans'/>
                   </Dropdown.Menu>
                 </Dropdown>
                 </li>
                 <li>
                 <Dropdown text='WOMEN'>
                   <Dropdown.Menu>
-                    <Dropdown.Item text='T-Shirts' onClick={props.women_drop_down_id.replace('1')}/>
-                    <Dropdown.Item text='Hoodies' onClick={props.women_drop_down_id.replace('2')}/>
-                    <Dropdown.Item text='Jeans' onClick={props.women_drop_down_id.replace('3')}/>
+                    <Dropdown.Item text='T-Shirts'/>
+                    <Dropdown.Item text='Hoodies'/>
+                    <Dropdown.Item text='Jeans'/>
                   </Dropdown.Menu>
                 </Dropdown>                
                 </li>
@@ -148,25 +149,25 @@ function Main(){
           <div className="row justify-content-around m-0 mt-2 fourcol text-center align-items-baseline">
               <div className="col-md-3 col-12 col-sm-6">
                 <a href="/product_desc">
-                <img src={dummy} className="image-thumbnail" alt="T-Shirts"/>
+                <img src={p_d.t_shirt.u_florida.product_link} className="image-thumbnail" alt="T-Shirts"/>
                 <p>T-Shirts</p>
                 </a>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
                 <a href="/product_desc">
-                <img src={dummy} className="image-thumbnail" alt="Jeans"/>
-                <p>Jeans</p>
+                <img src={p_d.shorts.clemson.prodcut_link} className="image-thumbnail" alt="Jeans"/>
+                <p>Shorts</p>
                 </a>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
                 <a href="/product_desc">
-                <img src={dummy} className="image-thumbnail" alt="pants"/>
-                <p>Pants</p>
+                <img src={p_d.hoodies.n_eastern_huskies.product_link} className="image-thumbnail" alt="pants"/>
+                <p>Hoodies</p>
                 </a>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
                 <a href="/product_desc">
-                <img src={dummy} className="image-thumbnail" alt="Hoodies"/>
+                <img src={p_d.hoodies.rit.product_link} className="image-thumbnail" alt="Hoodies"/>
                 <p>Hoodies</p>
                 </a>
               </div>
@@ -183,25 +184,25 @@ function Main(){
           <div className="row justify-content-around m-0 mt-2 fourcol text-center align-items-baseline">
               <div className="col-md-3 col-12 col-sm-6">
                 <a href="/product_desc">
-                <img src={dummy} className="image-thumbnail" alt="T-Shirts"/>
+                <img src={p_d.t_shirt.boston.product_link} className="image-thumbnail" alt="T-Shirts"/>
                 <p>T-Shirts</p>
                 </a>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
                 <a href="/product_desc">
-                <img src={dummy} className="image-thumbnail" alt="Jeans"/>
-                <p>Jeans</p>
+                <img src={p_d.hoodies.clemson.product_link} className="image-thumbnail" alt="Jeans"/>
+                <p>Hoodies</p>
                 </a>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
                 <a href="/product_desc">
-                <img src={dummy} className="image-thumbnail" alt="Case"/>
-                <p>Case</p>
+                <img src={p_d.shorts.ncsu.product_link} className="image-thumbnail" alt="Case"/>
+                <p>Shorts</p>
                 </a>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
                 <a href="/product_desc">
-                <img src={dummy} className="image-thumbnail" alt="Hoodies"/>
+                <img src={p_d.hoodies.clemson.product_link} className="image-thumbnail" alt="Hoodies"/>
                 <p>Hoodies</p>
                 </a>
               </div>
