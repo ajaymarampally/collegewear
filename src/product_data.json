@@ -202,7 +202,7 @@
         },
         "u_buffalo":{
             "product_name":"University at Buffalo Bulls Shorts",
-            "product_link":"https://raw.githubusercontent.com/ajaymarampally/collegewear/main/src/img/shorts/u_buffalo.webp",
+            "product_link":"https://raw.githubusercontent.com/ajaymarampally/collegewear/main/src/img/shorts/u_buffalo.png",
             "product_rating":"4",
             "product_review_cnt":"3",
             "product_price":"$40.99",
@@ -304,7 +304,7 @@
         },
         "n_eastern_huskies":{
             "product_name":"Men's Colosseum Heathered Gray Northeastern Huskies Arch and Logo Pullover Hoodie",
-            "product_link":"https://raw.githubusercontent.com/ajaymarampally/collegewear/main/src/img/hoodies/n_easter_huskies.jpg",
+            "product_link":"https://raw.githubusercontent.com/ajaymarampally/collegewear/main/src/img/hoodies/n_eastern_huskies.jpg",
             "product_rating":"4",
             "product_review_cnt":"4",
             "product_price":"$39.99",
@@ -337,7 +337,7 @@
         },
         "u_buffalo":{
             "product_name":"University at Buffalo Hooded Sweatshirt",
-            "product_link":"https://raw.githubusercontent.com/ajaymarampally/collegewear/main/src/img/hoodies/u_buffalo.png",
+            "product_link":"https://raw.githubusercontent.com/ajaymarampally/collegewear/main/src/img/hoodies/u_buffalo.jpg",
             "product_rating":"4",
             "product_review_cnt":"3",
             "product_price":"$62.99",
