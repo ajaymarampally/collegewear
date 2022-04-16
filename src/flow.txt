@@ -1,0 +1,13 @@
+json data fields
+
+1.product_name
+2.product_rating
+3.product_review_cnt
+4.product_price
+5.product_available_sizes
+6.product_description
+7.product_reviews
+8.product_discount_percentage
+
+
+
