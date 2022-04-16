@@ -210,7 +210,7 @@ function Main(){
           </div>
         </section>
         <footer>
-        <div className="container-fluid">
+        <div className="container-fluid mt-4">
         <div className="row text-center justify-content-around p-sm-2 align-items-baseline p-md-3">
           <div className="col-md-4 col-12 col-sm-3">
             <section>

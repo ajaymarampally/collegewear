@@ -1,4 +1,8 @@
 import './App.css';
+import './css/main.css';
+import './css/login.css';
+import './css/product_desc.css';
+import './css/product.css';
 import Main from './js/main.js';
 import Login from './js/login.js';
 import Cart from './js/Cart.js';

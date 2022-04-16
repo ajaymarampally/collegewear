@@ -6,6 +6,7 @@ import Rating from '@mui/material/Rating';
 import Button from "@material-ui/core/Button";
 import {Button as btn} from 'semantic-ui-react';
 import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Footer from '../js/footer';
 
 
 
@@ -99,6 +100,7 @@ class Product_desc extends React.Component{
                         </div>
                 </div>
             </div>
+            <Footer />
             </>
         );
     }
