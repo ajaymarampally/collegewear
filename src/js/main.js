@@ -6,11 +6,10 @@ import cart_svg from '../img/shopping-cart.svg';
 import user_svg from '../img/username.svg';
 import { Search } from 'semantic-ui-react'
 import img1 from '../img/img1.webp';
-import dummy from '../img/dummy.png';
 import { Dropdown } from 'semantic-ui-react';
 import { useNavigate } from 'react-router-dom';
-import {Link} from 'react-router-dom';
 import p_d from  '../product_data.json';
+import { Button } from "@mui/material";
 
 function exampleReducer(state, action) {
   switch (action.type) {
@@ -43,12 +42,6 @@ const source = _.times(5, () => ({
 
 function Main(){
     const navigate = useNavigate();
-
-    const props = {
-        men_drop_down_id: '0',
-        women_drop_down_id: '0'
-    }
-
     const [state, dispatch] = React.useReducer(exampleReducer, initialState)
     const { loading, results, value } = state
     
@@ -90,18 +83,30 @@ function Main(){
                 <li>
                 <Dropdown text='MEN'>
                   <Dropdown.Menu>
-                    <Dropdown.Item text='T-Shirts'/>
-                    <Dropdown.Item text='Hoodies'/>
-                    <Dropdown.Item text='Jeans'/>
+                    <Dropdown.Item onClick={() =>
+                  navigate('products', { state: p_d.t_shirt})
+                } text='T-Shirts'/>
+                    <Dropdown.Item onClick={() =>
+                  navigate('products', { state: p_d.hoodies})
+                } text='Hoodies'/>
+                    <Dropdown.Item onClick={() =>
+                  navigate('products', { state: p_d.shorts})
+                } text='Shorts'/>
                   </Dropdown.Menu>
                 </Dropdown>
                 </li>
                 <li>
                 <Dropdown text='WOMEN'>
                   <Dropdown.Menu>
-                    <Dropdown.Item text='T-Shirts'/>
-                    <Dropdown.Item text='Hoodies'/>
-                    <Dropdown.Item text='Jeans'/>
+                    <Dropdown.Item onClick={() =>
+                  navigate('products', { state: p_d.t_shirt})
+                } text='T-Shirts'/>
+                    <Dropdown.Item onClick={() =>
+                  navigate('products', { state: p_d.hoodies})
+                } text='Hoodies'/>
+                    <Dropdown.Item onClick={() =>
+                  navigate('products', { state: p_d.shorts})
+                } text='Shorts'/>
                   </Dropdown.Menu>
                 </Dropdown>                
                 </li>
@@ -148,28 +153,40 @@ function Main(){
           <div className="container-fluid">
           <div className="row justify-content-around m-0 mt-2 fourcol text-center align-items-baseline">
               <div className="col-md-3 col-12 col-sm-6">
-                <a href="/product_desc">
+                <Button className="btn"
+                onClick={() =>
+                  navigate('product_desc', { state: p_d.t_shirt.u_florida})
+                }>
                 <img src={p_d.t_shirt.u_florida.product_link} className="image-thumbnail" alt="T-Shirts"/>
-                <p>T-Shirts</p>
-                </a>
+                <p>{p_d.t_shirt.u_florida.product_name}</p>
+              </Button>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
-                <a href="/product_desc">
-                <img src={p_d.shorts.clemson.prodcut_link} className="image-thumbnail" alt="Jeans"/>
-                <p>Shorts</p>
-                </a>
+              <Button className="btn"
+                onClick={() =>
+                  navigate('product_desc', { state: p_d.shorts.clemson})
+                }>
+                <img src={p_d.shorts.clemson.prodcut_link} className="image-thumbnail" alt="clemson_short"/>
+                <p>{p_d.shorts.clemson.product_name}</p>
+              </Button>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
-                <a href="/product_desc">
-                <img src={p_d.hoodies.n_eastern_huskies.product_link} className="image-thumbnail" alt="pants"/>
-                <p>Hoodies</p>
-                </a>
+              <Button className="btn"
+                onClick={() =>
+                  navigate('product_desc', { state: p_d.hoodies.n_eastern_huskies})
+                }>
+                <img src={p_d.hoodies.n_eastern_huskies.product_link} className="image-thumbnail" alt="T-Shirts"/>
+                <p>{p_d.hoodies.n_eastern_huskies.product_name}</p>
+              </Button>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
-                <a href="/product_desc">
-                <img src={p_d.hoodies.rit.product_link} className="image-thumbnail" alt="Hoodies"/>
-                <p>Hoodies</p>
-                </a>
+              <Button className="btn"
+                onClick={() =>
+                  navigate('product_desc', { state: p_d.hoodies.rit})
+                }>
+                <img src={p_d.hoodies.rit.product_link} className="image-thumbnail" alt="T-Shirts"/>
+                <p>{p_d.hoodies.rit.product_name}</p>
+              </Button> 
               </div>
           </div>
           </div>
@@ -183,28 +200,40 @@ function Main(){
         <div className="container-fluid">
           <div className="row justify-content-around m-0 mt-2 fourcol text-center align-items-baseline">
               <div className="col-md-3 col-12 col-sm-6">
-                <a href="/product_desc">
+              <Button className="btn"
+                onClick={() =>
+                  navigate('product_desc', { state: p_d.t_shirt.boston})
+                }>
                 <img src={p_d.t_shirt.boston.product_link} className="image-thumbnail" alt="T-Shirts"/>
-                <p>T-Shirts</p>
-                </a>
+                <p>{p_d.t_shirt.boston.product_name}</p>
+              </Button>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
-                <a href="/product_desc">
-                <img src={p_d.hoodies.clemson.product_link} className="image-thumbnail" alt="Jeans"/>
-                <p>Hoodies</p>
-                </a>
+              <Button className="btn"
+                onClick={() =>
+                  navigate('product_desc', { state: p_d.hoodies.clemson})
+                }>
+                <img src={p_d.hoodies.clemson.product_link} className="image-thumbnail" alt="T-Shirts"/>
+                <p>{p_d.hoodies.clemson.product_name}</p>
+              </Button>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
-                <a href="/product_desc">
-                <img src={p_d.shorts.ncsu.product_link} className="image-thumbnail" alt="Case"/>
-                <p>Shorts</p>
-                </a>
+              <Button className="btn"
+                onClick={() =>
+                  navigate('product_desc', { state: p_d.shorts.ncsu})
+                }>
+                <img src={p_d.shorts.ncsu.product_link} className="image-thumbnail" alt="T-Shirts"/>
+                <p>{p_d.shorts.ncsu.product_name}</p>
+              </Button>
               </div>
               <div className="col-md-3 col-lg-3 col-12 col-sm-6">
-                <a href="/product_desc">
-                <img src={p_d.hoodies.clemson.product_link} className="image-thumbnail" alt="Hoodies"/>
-                <p>Hoodies</p>
-                </a>
+              <Button className="btn"
+                onClick={() =>
+                  navigate('product_desc', { state: p_d.hoodies.ncsu})
+                }>
+                <img src={p_d.hoodies.ncsu.product_link} className="image-thumbnail" alt="T-Shirts"/>
+                <p>{p_d.hoodies.ncsu.product_name}</p>
+              </Button>
               </div>
             </div>
           </div>

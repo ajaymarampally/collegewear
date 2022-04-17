@@ -10,4 +10,127 @@ json data fields
 8.product_discount_percentage
 
 
+1.navigate to product_desc with the specific product props 
 
+2. make the layout for the product page with the grid 
+
+3. set the prop type as the object of the onclick function in the page 
+
+
+
+
+import React from 'react';
+import '../css/main.css';
+import '../css/product_desc.css';
+import Header from '../js/header';
+import Rating from '@mui/material/Rating';
+import Button from "@material-ui/core/Button";
+import {Button as Btn} from 'semantic-ui-react';
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Footer from '../js/footer';
+import { useNavigate } from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
+
+
+
+class Product_desc extends React.Component{
+    handleIncrement = () => {
+        console.log('increment');
+        this.setState(state => ({ counter: state.counter + 1 }));
+        console.log(this.state.counter);
+      };
+    
+      handleDecrement = () => {
+        this.setState(state => ({ counter: state.counter - 1 }));
+      };
+
+      addToCart = () => {
+        console.log('add to cart', this.state.counter);
+
+        }
+    expandview = () => {
+        console.log('expand view');
+    }
+    
+    constructor(props){
+        super(props);
+        this.state = {
+            username: '',
+            password: '',
+            error: '',
+            loading: false,
+            rating_value: 40,
+            counter:1
+        }
+    }
+
+    componentDidMount(){
+        console.log('product_desc, componentDidMount');
+        console.log(this.props.location);
+    }
+
+    render(){
+        const displayCounter = this.state.counter > 0;
+        return(
+            <>
+            <div>
+                <Header />
+            </div>
+            <div className='product-desc'>
+                <div className='image-container'>
+                    <h1>Image Description</h1>
+                    <div className='img-gallery'>
+                        <img src='https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='product' />
+                        <img src='https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='product' />
+                    </div>
+                </div>
+                <div className='verticalLine'></div>
+                <div className='product-desc-container'>
+                        <h1>Product Name</h1>
+                        <div className='h-flex'>
+                            <Rating name="half-rating-read" defaultValue={2.5} precision={0.5} readOnly />
+                            <p>Number of Ratings</p>
+                        </div>
+                        <span>Price</span>
+                        <div className='h-flex'>
+                            <div className='ciruclar-btn'>
+                                <Btn className='ui circular button'>XS</Btn>
+                            </div>
+                            <div className='ciruclar-btn'>
+                                <Btn className='ui circular button'>S</Btn>
+                            </div>
+                            <div className='ciruclar-btn'>
+                                <Btn className='ui circular button'>M</Btn>
+                            </div>
+                            <div className='ciruclar-btn'>
+                                <Btn className='ui circular button'>L</Btn>
+                            </div>
+                            <div className='ciruclar-btn'>
+                                <Btn className='ui circular button'>XL</Btn>
+                            </div>    
+                        </div>
+                        <span><p>Quantity</p></span>
+                        <ButtonGroup size="small" aria-label="small outlined button group">
+                        {displayCounter && <Button onClick={this.handleDecrement}>-</Button>}
+                        {displayCounter && <Button disabled>{this.state.counter}</Button>}
+                        <Button onClick={this.handleIncrement}>+</Button>
+                        </ButtonGroup>
+                        <Button onClick={this.addToCart}>Add to Cart</Button>
+                        <div className='horizontalLine'></div>
+                        <div className='dropdown-view'>
+                            <span>Details</span>
+                            <Button onClick={this.expandview} >+</Button>
+                        </div>
+                        <div className='dropdown-view'>
+                            <span>Reviews</span>
+                            <Button onClick={this.expandview} >+</Button>
+                        </div>
+                </div>
+            </div>
+            <Footer />
+            </>
+        );
+    }
+}
+
+export default Product_desc;

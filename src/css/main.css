@@ -2,13 +2,16 @@
 
 :root {
     --color-primary : #D50032;
-    --color-secondary : #008AB0
+    --color-secondary : #008AB0;
+    --button-color :white;
+    --button-background: white;
 }
 
 *{
     box-sizing: border-box;
     margin:0 auto;
     padding:0;
+
 }
 
 html,body,div{

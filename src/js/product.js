@@ -2,31 +2,21 @@ import React from 'react';
 import '../css/main.css';
 import '../css/product.css';
 import Header from '../js/header';
+import { useNavigate } from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 
-class Products extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            username: '',
-            password: '',
-            error: '',
-            loading: false,
-        }
-    }
-    render(){
-        return(
-            <>
-            <div>
-                <Header />
-            </div>
-            <div>
-                <h1>Products</h1>
-            </div>
-            </>
-        );
-    }
-    
-    
+
+function Products() {
+    const location = useLocation();
+    const navigate = useNavigate();
+    console.log('location params product page',location.state)
+    return ( 
+        <>
+        <div>
+            <Header/>
+        </div>
+        </>
+     );
 }
 
 export default Products;
