@@ -41,7 +41,7 @@ function Product_desc(){
     const expandView = () => {
         console.log("Expand view");
     };
-    console.log('location params',location.state)
+    console.log('product desc params',location.state)
     return (  
         <div>
             <Header/>
@@ -56,7 +56,7 @@ function Product_desc(){
                 <div className='product-desc-container'>
                         <h1>{location.state.product_name}</h1>
                         <div className='h-flex'>
-                            <Rating name="half-rating-read" defaultValue={location.state.product_rating} precision={0.5} readOnly />
+                            <Rating name="half-rating-read" defaultValue={parseInt(location.state.product_rating)} precision={0.5} readOnly />
                             <p>Reviews {location.state.product_review_cnt}</p>
                         </div>
                         <span>Price {location.state.product_price}</span>
@@ -95,7 +95,7 @@ function Product_desc(){
                         </div>
                 </div>
             </div>
-            <Footer />
+            <Footer/>
         </div>
     );
 }

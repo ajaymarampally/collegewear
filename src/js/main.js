@@ -166,7 +166,7 @@ function Main(){
                 onClick={() =>
                   navigate('product_desc', { state: p_d.shorts.clemson})
                 }>
-                <img src={p_d.shorts.clemson.prodcut_link} className="image-thumbnail" alt="clemson_short"/>
+                <img src={p_d.shorts.clemson.product_link} className="image-thumbnail" alt="clemson_short"/>
                 <p>{p_d.shorts.clemson.product_name}</p>
               </Button>
               </div>

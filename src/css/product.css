@@ -1,0 +1,16 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.elem-container{
+    display:grid;
+    gap:20px;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.filter-container{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+}

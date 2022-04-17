@@ -7,6 +7,9 @@ import user_svg from '../img/username.svg';
 import { Search } from 'semantic-ui-react'
 import { Dropdown } from 'semantic-ui-react';
 import { useNavigate } from 'react-router-dom';
+import p_d from  '../product_data.json';
+import product_data from '../product_data'
+
 
 function exampleReducer(state, action) {
     switch (action.type) {
@@ -24,12 +27,9 @@ function exampleReducer(state, action) {
     }
   }
 
-const source = _.times(5, () => ({
-    title: "Testing Title",
-    description: "Testing description",
-    image: "Testing Image",
-    price: "Testing Price",
-  }))
+const source = product_data;
+
+console.log('header search data',product_data)
   
   const initialState = {
     loading: false,
@@ -41,10 +41,6 @@ function Header(){
 
     const navigate = useNavigate();
 
-    const props = {
-        men_drop_down_id: '0',
-        women_drop_down_id: '0'
-    }
     const [state, dispatch] = React.useReducer(exampleReducer, initialState)
     const { loading, results, value } = state
 
@@ -86,20 +82,32 @@ function Header(){
                 <li>
                 <Dropdown text='MEN'>
                   <Dropdown.Menu>
-                    <Dropdown.Item text='T-Shirts'/>
-                    <Dropdown.Item text='Hoodies' />
-                    <Dropdown.Item text='Jeans' />
+                    <Dropdown.Item onClick={() =>
+                  navigate('products', { state: p_d.t_shirt})
+                } text='T-Shirts'/>
+                    <Dropdown.Item onClick={() =>
+                  navigate('products', { state: p_d.hoodies})
+                } text='Hoodies'/>
+                    <Dropdown.Item onClick={() =>
+                  navigate('products', { state: p_d.shorts})
+                } text='Shorts'/>
                   </Dropdown.Menu>
                 </Dropdown>
                 </li>
                 <li>
                 <Dropdown text='WOMEN'>
                   <Dropdown.Menu>
-                    <Dropdown.Item text='T-Shirts' />
-                    <Dropdown.Item text='Hoodies' />
-                    <Dropdown.Item text='Jeans' />
+                    <Dropdown.Item onClick={() =>
+                  navigate('products', { state: p_d.t_shirt})
+                } text='T-Shirts'/>
+                    <Dropdown.Item onClick={() =>
+                  navigate('products', { state: p_d.hoodies})
+                } text='Hoodies'/>
+                    <Dropdown.Item onClick={() =>
+                  navigate('products', { state: p_d.shorts})
+                } text='Shorts'/>
                   </Dropdown.Menu>
-                </Dropdown>                                     
+                </Dropdown>                                    
                 </li>
             </ul>
             <ul className="navbar-nav-right">

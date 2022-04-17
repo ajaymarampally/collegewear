@@ -1,4 +1,4 @@
-export const product_data =[ {
+const product_data =[ {
     "t_shirt":{
         "boston":{
             "product_name":"Boston University Victory Short Sleeve T-Shirt",
@@ -404,3 +404,5 @@ export const product_data =[ {
     }
 }
 ];
+
+export default product_data;
