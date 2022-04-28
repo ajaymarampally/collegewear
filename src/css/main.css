@@ -55,6 +55,25 @@ img{
     margin: 0 auto;
 }
 
+.cart-quantity{
+    /* css for cart quantity */
+    font-size:20px;
+    font-weight: 400;
+    border-radius: 50%;
+    position:relative;
+    top: -10px;
+    right: -5px;
+    opacity: 0.7;
+}
+
+.main-p-product p{
+    /* css for main product */
+    font-size: 5x;
+    font-weight: 300;
+}
+
+
+
 .navbar-main{
     width:100%;
     height: auto;

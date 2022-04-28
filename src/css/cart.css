@@ -1,0 +1,16 @@
+.c_item_img img{
+    width:150px;
+    height:150px;
+}
+
+.cart-container{
+    display:grid;
+    grid-template-columns:6fr 4fr;
+}
+
+.push-right{
+    /* set margin left to 0.8 percent of the viewport  */
+    margin-left: calc(80% - 1px);
+}
+
+

@@ -10,6 +10,15 @@ json data fields
 8.product_discount_percentage
 
 
+cart_items 
+
+1.product_name
+2.product_rating
+3.product_review_cnt
+4.product_price
+
+
+
 1.navigate to product_desc with the specific product props 
 
 2. make the layout for the product page with the grid 
@@ -17,3 +26,262 @@ json data fields
 3. set the prop type as the object of the onclick function in the page 
 
 
+1.load the images into the div 
+
+2.filter span list 
+
+3.filter selections 
+
+
+
+check the 480 gradescope next work. 
+
+1.check at the website ( ROWHWG)  -> admin rights and acess 
+
+2. college wear -> 1. arrange the css , make the filters 
+					2.add the cart page 
+					
+3. cs450 video lessons 
+	start assignment - 30%
+	
+
+
+
+1.semantic search ui implementation 
+
+2.filter select functions 
+
+
+{
+	a:{
+		n:{
+			nn:
+		}
+		}
+	b:{
+		n:{
+			nn:
+		}
+		}
+	c:{
+		n:{
+			nn:
+		}
+		}
+}
+for i in main:
+	for j in i:
+		for z in j:
+			z.nn ==
+			
+{ p_name , p_price , p_image , }
+
+1.size filter 
+2.range filter 
+3.color filter 
+4.discount filter 
+
+
+---------------
+
+1.payment_comp cart.js
+2.new page payment.js
+3.dist slice redux
+4. make payment page with the totals 
+
+----------------
+
+order_date
+order_no
+shipping_address
+credit_card details 
+
+
+order summary 
+
+items_subtotal 
+shipping & handling 
+total before tax
+estimated tax 
+grand total 
+
+-------------
+
+1.remove from cart 
+2.cart total quantity 
+
+------------------
+
+
+data to cart 
+
+product_name
+quantity
+price
+
+-------------------
+
+(2:00)
+
+1.search in the header -> use redux
+
+search results -? (after the search bar)
+                  {search_results.map((item,index)=>{
+                    return(
+                      <div key={index}>
+                          <div className="search-item">
+                            <img src={item.product_link} alt="product_image"/>
+                            <div className="search-item-name">
+                              {item.product_name}
+                            </div>
+                          </div>
+                      </div>
+                    )
+                  }
+                  )}
+				  
+
+
+2.filters in the products page -> use redux 
+
+
+-------------------------
+
+4/26
+
+
+1.color filter 
+2.discount filter 
+3.search finalize 
+4.cart total details 
+5.advertisment page ( on click -> with discount products)
+6.check password second time and prompt if not the same in the register user page
+7. review in product_desc page clicable show reviews 
+8 . remove from cart single click -> remove completely 
+
+
+
+ 
+----------------
+
+css for all pages 
+
+1.add feedback to the login sessions 
+2.images for the main screen (2 or more jumbotron)
+
+
+questions :
+
+1.after signup -> to login page / main page? 
+
+
+size , price , discount , color 
+
+false , false , false , false 
+
+false , true , faslse , false 
+
+size -> true 0?> elem_arr.fileter(size,elem) -> product elemtn -> render-> send to store 
+/ 
+
+search -> val -> produyct +mame filter -> result set -> render 
+
+
+
+///
+
+t shirts 
+
+1.red 
+2.black
+3.silver
+4.black
+5.silver
+6.orange
+7.blue
+8.white 
+9.silver
+10.blue
+11.blue
+12.silver
+
+//hoodies 
+
+1.red
+2.silver
+3.silver 
+4.black
+5.black 
+6.black 
+7.black 
+8.black
+9.red
+10.blue
+11.blue
+12.blue
+
+
+//shorts
+
+1.red
+2.black
+3.black
+4.red
+5.red
+6.blue
+7.silver
+8.silver
+9.red
+10.silver
+11.blue 
+12.blue
+
+
+//header section 
+
+                <input type="text" placeholder="seach..." onChange={e=>setSearchTerm(e.target.value)} />
+                  {source.filter((source)=>{
+                      if(searchTerm===''){
+                        return NaN;
+                      }
+                      //create a temp array to store the filtered data
+                      let temp = []
+                      Object.values(source).forEach(element => {                        
+                        if(element.product_name.toLowerCase().includes(searchTerm.toLowerCase())){
+                          //console.log('match',element)
+                          temp.push(element)}
+                      })
+                      console.log('search result',temp)
+                      setTimeout(()=>{
+                        //dispatch(search_actions.set_search_items({search_items:temp}))
+                      },3000)
+                      //dispatch(search_actions.set_search_items({search_items:temp}))
+                      console.log('search results in header',search_results)
+                  }
+                  )}
+				  
+				  -----
+				  
+				  
+				  
+1.cart auto fill 
+2.cart totals 
+3.remove from cart -> remove product from the cart 
+4.clear filter in product page
+
+
+------
+
+1.css
+
+
+            if (existingItem.quantity === 1) {
+              console.log('removing item from cart quantity 1');
+              state.cart_items = state.cart_items.filter((item) => item.product_name !== item_to_remove.product_name);
+                state.total_price -= parseInt(convert_to_int(existingItem.product_price));
+            } else {
+              console.log('removing item from cart quantity > 1');
+              existingItem.quantity--;
+                existingItem.total_price = existingItem.quantity * existingItem.product_price;
+                state.total_price -= parseInt(convert_to_int(existingItem.product_price));
+            }

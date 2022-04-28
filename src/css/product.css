@@ -3,14 +3,38 @@
     grid-template-columns: 1fr 3fr;
 }
 
-.elem-container{
-    display:grid;
-    gap:20px;
-    grid-template-columns: repeat(3,1fr);
-}
-
 .filter-container{
     display:flex;
     flex-direction:column;
     justify-content:space-evenly;
+}
+
+.elem-container{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.image-container img{
+    width:325px;
+    height:325px;
+    background-color: white;
+}
+
+.img-name{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cart-component{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.filter-border{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 35px;
+    max-height: 1000px;
 }

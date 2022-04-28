@@ -43,7 +43,7 @@ class Signup_component extends React.Component{
               <Form.Label><h2>Password</h2></Form.Label>
               <Form.Control type="password" required />
             </Form.Group>
-            <a href='/login'>
+            <a href='/'>
               <Button className="w-100 login-btn mt-4">
                 SIGN UP
               </Button>
