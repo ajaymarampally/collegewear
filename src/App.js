@@ -43,7 +43,24 @@ function App() {
           <Route path='/login/products/product_desc/*' element={<Product_desc />} />
           <Route path='/signup_comp/products/*' element={<Products />} />
           <Route path='/signup_comp/products/product_desc/*' element={<Product_desc />} />
-          <Route path='/collegewear/*' element={<Main />} />
+          <Route path="collegewear/" element={<Main />} />
+          <Route path="collegewear/login" element={<Login />} />
+          <Route path='collegewear/cart' element={<Cart />} />
+          <Route path='collegewear/signup' element={<Signup />} />
+          <Route path='collegewear/signup_comp' element={<Signup_comp />} />
+          <Route path='collegewear/product_desc' element={<Product_desc />} />
+          <Route path='collegewear/products/product_desc' element={<Product_desc />} />
+          <Route path='collegewear/products/*' element={<Products />} />
+          <Route path='collegewear/cart/*' element={<Products />} />
+          <Route path='collegewear/cart/product_desc/*' element={<Product_desc />} />
+          <Route path='collegewear/test' element={<Test />} />
+          <Route path='collegewear/payment' element={<Payment />} />
+          <Route path='collegewear/payment/*' element={<Products />} />
+          <Route path='collegewear/payment/product_desc/*' element={<Product_desc />} />
+          <Route path='collegewear/login/products/*' element={<Products />} />
+          <Route path='collegewear/login/products/product_desc/*' element={<Product_desc />} />
+          <Route path='collegewear/signup_comp/products/*' element={<Products />} />
+          <Route path='collegewear/signup_comp/products/product_desc/*' element={<Product_desc />} />
         </Routes>
       </Router>
     </div>
