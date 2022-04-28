@@ -30,6 +30,8 @@ function Products(props) {
     const adv_flag = useSelector(state => state.filter.adv_flag);
     const [price_default, setPriceDefault] = React.useState(0);
 
+    const[on_present_page,setOnPresentPage] = React.useState(false);
+
     const dispatch_to_filter_slice = () => {
         
         dispatch(filter_actions.set_filter_arr(elem_arr));
@@ -41,6 +43,7 @@ function Products(props) {
     React.useEffect(() => {
         dispatch_to_filter_slice();
         ten_percent_flag = false;
+        setOnPresentPage(true);
         console.log('adv_flag',adv_flag)
         elem_arr = Object.values(location.state);
         if(adv_flag){

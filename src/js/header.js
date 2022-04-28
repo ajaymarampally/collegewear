@@ -14,6 +14,7 @@ import product_data from '../product_data'
 import { Link } from "react-router-dom";
 import {useSelector,useDispatch} from 'react-redux'
 import { search_actions } from "../store/search_slice";
+import { filter_actions } from "../store/filter_slice";
 
   
 function Header(){
@@ -90,13 +91,13 @@ function Header(){
                 <Dropdown text='MEN'>
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={() =>
-                  navigate('products', { state: p_d.t_shirt})
+                 {navigate('products', { state: p_d.t_shirt});dispatch(filter_actions.reset_filter_flags())} 
                 } text='T-Shirts'/>
                     <Dropdown.Item onClick={() =>
-                  navigate('products', { state: p_d.hoodies})
+                {navigate('products', { state: p_d.hoodies});dispatch(filter_actions.reset_filter_flags())}
                 } text='Hoodies'/>
                     <Dropdown.Item onClick={() =>
-                  navigate('products', { state: p_d.shorts})
+                  {navigate('products', { state: p_d.shorts});dispatch(filter_actions.reset_filter_flags())} 
                 } text='Shorts'/>
                   </Dropdown.Menu>
                 </Dropdown>
@@ -105,13 +106,13 @@ function Header(){
                 <Dropdown text='WOMEN'>
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={() =>
-                  navigate('products', { state: p_d.t_shirt})
+                  {navigate('products', { state: p_d.t_shirt});dispatch(filter_actions.reset_filter_flags())} 
                 } text='T-Shirts'/>
                     <Dropdown.Item onClick={() =>
-                  navigate('products', { state: p_d.hoodies})
+                {navigate('products', { state: p_d.hoodies});dispatch(filter_actions.reset_filter_flags())} 
                 } text='Hoodies'/>
                     <Dropdown.Item onClick={() =>
-                  navigate('products', { state: p_d.shorts})
+                  {navigate('products', { state: p_d.shorts});dispatch(filter_actions.reset_filter_flags())} 
                 } text='Shorts'/>
                   </Dropdown.Menu>
                 </Dropdown>                                    
