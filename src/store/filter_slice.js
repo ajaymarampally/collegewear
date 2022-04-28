@@ -1,4 +1,4 @@
-import { ConstructionOutlined } from '@mui/icons-material';
+import { ConstructionOutlined, Password } from '@mui/icons-material';
 import {createSlice} from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
 
@@ -66,18 +66,13 @@ const filter_slice = createSlice({
             
         },
         color_filter: (state, action) => {
+            //for every element in the state.filter_arr check if the element.product_color is equal to the action.payload[1] , if yes then continue else pop the element from the state.filter_arr
             state.filter_flag = true
-            //console.log('elem_arr in color_filter',action.payload[1])
-            state.filter_arr.map(element=>{
-                //console.log('element color',element.product_color,action.payload[1])
-                if(element.product_color.includes(action.payload[1])){
-                    //do nothing
-                }
-                else{
-                    console.log('no match pop element')
-                    state.filter_arr.pop(element);
-                }
+            let temp = []
+            state.filter_arr.filter(element=>{
+                element.product_color[0]===action.payload[1]?temp.push(element):state.filter_arr.pop(element);
             })
+            state.filter_arr = temp;
         },
         discount_filter: (state, action) => {
             state.filter_flag = true
@@ -121,6 +116,7 @@ const filter_slice = createSlice({
         reset_filter_flags: (state, action) => {
             state.filter_flag = false;
             state.price_flag = false;
+            state.adv_flag = false;
         },
         set_size_select_flag: (state, action) => {
             state.size_select_flag = !state.size_select_flag;

@@ -8,6 +8,7 @@ import CartItem from './cart_item'
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import {useNavigate} from 'react-router-dom';
 import {data_actions} from '../store/data_slice'
+import cart_empty from '../img/cart_empty.jpeg'
 
 function Cart() {
 const navigator = useNavigate();
@@ -27,7 +28,16 @@ const navigator = useNavigate();
     dispatch(data_actions.set_cart_details({items_sub_total: cart_total }));
     navigator('/payment');
 }
-
+let cart_flag = true;
+React.useEffect(() => {
+    if(cart_items.length === 0){
+      cart_flag = false;
+    }
+    else{
+        cart_flag = true;
+    }
+}, []);
+console.log('cart_flag',cart_flag);
   return (
     <><div>
         <Header />
@@ -35,11 +45,12 @@ const navigator = useNavigate();
         <div className='cart-container'>
             <div className='cart_items_container'>
                 <div>
-                    {cart_items.map((item,index) => (
+                    {(cart_flag)?cart_items.map((item,index) => (
                         <CartItem key={index} item={item}/>
-                    ))}
-                    <h1 className='mt-5 push-right'>Cart Total: ${cart_total} </h1>
-                </div>
+                    )):<img src={cart_empty} alt='cart_empty'/>
+}
+                   {cart_flag&&<h1 className='mt-5 push-right'>Cart Total: ${cart_total} </h1>}                     
+                    </div>
             </div>
             <div className="h-50 p-5 m-5 payment-container">
                     <Card className="p-5 payment-card">

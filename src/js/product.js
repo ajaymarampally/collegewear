@@ -35,13 +35,21 @@ function Products(props) {
         dispatch(filter_actions.reset_filter_flags());
         
     }
-
+    let ten_percent_flag = useSelector(state => state.filter.adv_flag);
     React.useEffect(() => {
         dispatch_to_filter_slice();
+        ten_percent_flag = false;
+        console.log('adv_flag',adv_flag)
         elem_arr = Object.values(location.state);
+        if(adv_flag){
+            ten_percent_flag = true;
+        }
+        else{
+            ten_percent_flag = false;
+        }
     },[])
 
-    const ten_percent_flag = useSelector(state => state.filter.adv_flag);
+
     console.log('ten_percent_flag',ten_percent_flag)
     console.log('36 items in product_page',elem_arr)
     //create an array to store the checked status of the checkbox elements 
@@ -55,7 +63,7 @@ function Products(props) {
         WHITE:false,
         BLUE:false,
         RED:false,
-        SILVER:false,
+        GRAY:false,
         ten_percent:ten_percent_flag,
         twenty_percent:false,
         xs:0,
@@ -63,6 +71,11 @@ function Products(props) {
         m:2,
         l:3,
         xl:4,
+        black:5,
+        white:6,
+        blue:7,
+        red:8,
+        gray:9,
         price_default:0
     });
 
@@ -118,7 +131,7 @@ function Products(props) {
     }
 
     const set_filter_flag = ()=>{
-        dispatch(filter_actions.set_filter_flag());
+        //dispatch(filter_actions.set_filter_flag());
         dispatch(filter_actions.set_price_flag())
     }
 
@@ -126,7 +139,6 @@ function Products(props) {
         //init price_arr to empty array
         setPriceArr([]);
         set_filter_flag();
-        price_arr = [];
         let temp = [];
         console.log('flags',price_flag,filter_flag)
         filter_arr.map(element=>{
@@ -161,7 +173,7 @@ function Products(props) {
             WHITE:false,
             BLUE:false,
             RED:false,
-            SILVER:false,
+            GRAY:false,
             ten_percent:false,
             twenty_percent:false,
             xs:0,
@@ -169,6 +181,11 @@ function Products(props) {
             m:2,
             l:3,
             xl:4,
+            black:5,
+            white:6,
+            blue:7,
+            red:8,
+            gray:9,
             price_default:0
         });
         dispatch(filter_actions.clear_filter(props.cart_items));
@@ -248,18 +265,6 @@ function Products(props) {
                     </FormControl>
                     </div>
                     <div>
-                        <h1 className='mt-2'>Price Filter</h1>
-                        <Slider
-                            aria-label="Price marks"
-                            defaultValue={0}
-                            step={10}
-                            valueLabelDisplay="auto"
-                            marks={price_marks}
-                            onChange={(e,val)=>{price_filter_function([filter_arr,val])}}
-                        />
-
-                    </div>
-                    <div>
                         <h1 className='mt-2'>Color Filter</h1>
                         <FormControl>
                         <FormLabel id="demo-radio-buttons-group-label"></FormLabel>
@@ -267,7 +272,7 @@ function Products(props) {
                                 control={
                                 <Checkbox
                                     checked={checkbox_arr.BLACK}
-                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.BLACK,"a",elem_arr]))}}
+                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.BLACK,checkbox_arr.black,elem_arr]))}}
                                     name="BLACK"
                                 />
                                 }
@@ -277,7 +282,7 @@ function Products(props) {
                                 control={
                                 <Checkbox
                                     checked={checkbox_arr.WHITE}
-                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.WHITE,"w",elem_arr]))}}
+                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.WHITE,checkbox_arr.white,elem_arr]))}}
                                     name="WHITE"
                                 />
                                 }
@@ -287,7 +292,7 @@ function Products(props) {
                                 control={
                                 <Checkbox
                                     checked={checkbox_arr.BLUE}
-                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.BLUE,"u",elem_arr]))}}
+                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.BLUE,checkbox_arr.blue,elem_arr]))}}
                                     name="BLUE"
                                 />
                                 }
@@ -297,7 +302,7 @@ function Products(props) {
                                 control={
                                 <Checkbox
                                     checked={checkbox_arr.RED}
-                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.RED,"d",elem_arr]))}}
+                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.RED,checkbox_arr.red,elem_arr]))}}
                                     name="RED"
                                 />
                                 }
@@ -306,12 +311,12 @@ function Products(props) {
                             <FormControlLabel
                                 control={
                                 <Checkbox
-                                    checked={checkbox_arr.SILVER}
-                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.SILVER,"s",elem_arr]))}}
-                                    name="SILVER"
+                                    checked={checkbox_arr.GRAY}
+                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.GRAY,checkbox_arr.gray,elem_arr]))}}
+                                    name="GRAY"
                                 />
                                 }
-                                label="SILVER"
+                                label="GRAY"
                             />
                         </FormControl>
                     </div>
@@ -341,6 +346,19 @@ function Products(props) {
                             />
                     </FormControl>
                     </div>
+                    <div>
+                        <h1 className='mt-2'>Price Filter</h1>
+                        <Slider
+                            aria-label="Price marks"
+                            defaultValue={0}
+                            step={10}
+                            valueLabelDisplay="auto"
+                            marks={price_marks}
+                            onChange={(e,val)=>{price_filter_function([filter_arr,val])}}
+                        />
+
+                    </div>
+
                 </fieldset>
             </div>
             <div className='elem-container'>
@@ -351,7 +369,7 @@ function Products(props) {
 
                 {/* {!filter_flag && elem_arr.map((item,index) => <ProductElement key={index} item={item}/>)} */}
 
-                {(filter_flag&&!price_flag)?filter_arr.map((item,index) => <ProductElement key={index} item={item}/>):(filter_flag&&price_flag)?pricearr.map((item,index) => <ProductElement key={index} item={item}/>):elem_arr.map((item,index) => <ProductElement key={index} item={item}/>)}
+                {(filter_flag&&!price_flag)?filter_arr.map((item,index) => <ProductElement key={index} item={item}/>):(!filter_flag&&price_flag)?pricearr.map((item,index) => <ProductElement key={index} item={item}/>):(!filter_flag && !price_flag)?elem_arr.map((item,index) => <ProductElement key={index} item={item}/>):(filter_flag&&price_flag)?(pricearr.map((item,index) => <ProductElement key={index} item={item}/>)):null}
 
             </div>
         </div>

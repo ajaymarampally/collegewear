@@ -29,19 +29,19 @@ class Signup_component extends React.Component{
           <Form className="login-form">
             <Form.Group className="mb-4" id="email">
               <Form.Label><h2>Email Address *</h2></Form.Label>
-              <Form.Control type="email" required />
+              <Form.Control defaultValue={'uic@uic.edu'} type="email" required />
             </Form.Group>
             <Form.Group className="mb-4" id="email">
               <Form.Label><h2>Full Name</h2></Form.Label>
-              <Form.Control type="name" required />
+              <Form.Control defaultValue={'John Doe'} type="name" required />
             </Form.Group>
             <Form.Group className="mb-4" id="email">
               <Form.Label><h2>Choose Password</h2></Form.Label>
-              <Form.Control type="password" required />
+              <Form.Control defaultValue={'*********'} type="password" required />
             </Form.Group>
             <Form.Group className="mb-4" id="password">
               <Form.Label><h2>Password</h2></Form.Label>
-              <Form.Control type="password" required />
+              <Form.Control defaultValue={'*********'} type="password" required />
             </Form.Group>
             <a href='/'>
               <Button className="w-100 login-btn mt-4">

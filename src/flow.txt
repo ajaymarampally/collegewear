@@ -285,3 +285,54 @@ t shirts
                 existingItem.total_price = existingItem.quantity * existingItem.product_price;
                 state.total_price -= parseInt(convert_to_int(existingItem.product_price));
             }
+			
+			
+			
+			<div>
+                {cart_items.map((item,index) => (
+                    <CartItem key={index} item={item}/>
+                ))}
+                <p>Cart Total: {cart_total} </p>
+            </div>		
+			
+			
+			
+                    <Card className="payment-card">
+                        <Card.Body>
+                        <h2 className="text-center mb-4">PAYMENT DETAILS</h2>
+                        <Form className="payment-form">
+                            <Form.Group className="mb-4" id="email">
+                            <Form.Label><h2>Card Number</h2></Form.Label>
+                            <Form.Control type="text" defaultValue={credit_card_no} required />
+                            </Form.Group>
+                            <Form.Group className="mb-4" id="email">
+                            <Form.Label><h2>Expiry (MM/YY)</h2></Form.Label>
+                            <Form.Control type="date" defaultValue={card_default_value} required />
+                            </Form.Group>
+                            <Form.Group className="mb-4" id="email">
+                            <Form.Label><h2>Card Holder Name</h2></Form.Label>
+                            <Form.Control type="name" defaultValue={card_holder_name} required />
+                            </Form.Group>
+                            <a onClick={()=>navigate_to_cart()}>
+                            <Button className="w-100 login-btn mt-4">
+                                Confirm Payment
+                            </Button>
+                            </a>
+                        </Form>
+                        </Card.Body>
+                    </Card>  
+
+
+            console.log('color filter dispatch called')
+            state.filter_flag = true
+            console.log('elem_arr in search_filter',action.payload[1],state.filter_arr.length)
+            state.filter_arr.forEach(element=>{
+                //console.log('test')
+                if(element.product_color.includes(parseInt(action.payload[1]))){
+                    console.log('color found',state.filter_arr.length)
+                }
+                else{
+                    state.filter_arr.pop(element);
+                    console.log('pop element',state.filter_arr.length)
+                }
+            })

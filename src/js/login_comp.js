@@ -36,19 +36,16 @@ export default function Login_Comp() {
           <Form className="login-form" onSubmit={handleSubmit}>
             <Form.Group className="mb-4" id="email">
               <Form.Label><h2>Email Address *</h2></Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
+              <Form.Control type="email" defaultValue={'uic@uic.edu'} ref={emailRef} required />
             </Form.Group>
             <Form.Group className="mb-4" id="password">
               <Form.Label><h2>Password</h2></Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
+              <Form.Control type="password" defaultValue={'********'} ref={passwordRef} required />
             </Form.Group>
             <Button disabled={loading} className="w-100 login-btn mt-4" type="submit">
               LOG IN
             </Button>
           </Form>
-          <div className="w-100 text-center mt-3">
-            <Link to="/forgot-password">Forgot Password?</Link>
-          </div>
         </Card.Body>
       </Card>
     </div>
