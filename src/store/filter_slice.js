@@ -66,13 +66,14 @@ const filter_slice = createSlice({
             
         },
         color_filter: (state, action) => {
+            console.log('color filter called')
             //for every element in the state.filter_arr check if the element.product_color is equal to the action.payload[1] , if yes then continue else pop the element from the state.filter_arr
             state.filter_flag = true
-            let temp = []
-            state.filter_arr.filter(element=>{
-                element.product_color[0]===action.payload[1]?temp.push(element):state.filter_arr.pop(element);
-            })
-            state.filter_arr = temp;
+            let color_arr = state.filter_arr.slice(0, state.filter_arr.length);
+            let temp_color_arr = []
+            state.filter_arr = state.filter_arr.filter(element=>
+                parseInt(element.product_color[0])==parseInt(action.payload[1]))
+            
         },
         discount_filter: (state, action) => {
             state.filter_flag = true
