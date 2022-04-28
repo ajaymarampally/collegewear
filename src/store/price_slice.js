@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import product_data from '../product_data'
 
 const convert_to_int = (str) => {
-    return parseInt(str.replace(/[^0-9\.]+/g, ""));
+    return parseInt(str.replace(/[^0-9.]+/g, ""));
   }
 
 const price_slice = createSlice({
