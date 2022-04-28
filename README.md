@@ -1,45 +1,53 @@
 # Getting Started with College Wear Website
 
-This is a website is an React application running at '''localhost:3000/'''
+This is a website is an React application running at
+
+```
+localhost:3000/
+```
 
 
 ## Setting Up the Repository
 
-#Clone the Repository
+<h2>Clone the Repository<h2/>
 
-'''
+```
 git clone https://github.com/ajaymarampally/collegewear.git
-'''
+```
 
-#Install the necessary Dependencies
+<h2>Install the necessary Dependencies<h2/>
 
-'''
+```
 npm install
-'''
+```
 
-#Run the Application 
+<h2>Run the Application <h2/>
 
-'''npm start'''
+```
+npm start
+```
 
-##Contributions 
+<h2>Contributions <h2/>
 
-#Sai Suryateja Sakuru
+<h3>Sai Suryateja Sakuru<h3/>
+
 ```
 1. UI design for the product , main and cart pages
 2. Implementation of router navigation
 3.CSS for the login , register and Main page
-
-
-'''
-
-#Vineeth Mynedi
 ```
+
+
+<h3>Vineeth Mynedi<h3/>
+
+```  
 1.Implemented Search Filter 
 2.Setting up the necessary dependencies
 3.Aggregation of the data required for the application in appropriate formats
 ```
 
-#Ajay Marampalli
+<h3>Ajay Marampalli<h3/>
+
 ```
 1.Setting up the redux-store with redux@toolkit for slice actions
 2.CSS for product and product-element page 
