@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/collegewear/static/css/main.0db07868.css",
-    "main.js": "/collegewear/static/js/main.1f11eeac.js",
+    "main.js": "/collegewear/static/js/main.6ace6ff2.js",
     "static/js/787.58609057.chunk.js": "/collegewear/static/js/787.58609057.chunk.js",
     "static/media/brand-icons.svg": "/collegewear/static/media/brand-icons.6729d29753e000c17489.svg",
     "static/media/icons.svg": "/collegewear/static/media/icons.62d9dae4e0040e81c980.svg",
@@ -26,11 +26,11 @@
     "static/media/University_of_Illinois_at_Chicago_circle_logo.svg": "/collegewear/static/media/University_of_Illinois_at_Chicago_circle_logo.32b1d6333fa4fe701f4d104fbd7b4431.svg",
     "static/media/username.svg": "/collegewear/static/media/username.68b8bacf902d1f257aa04eb504f75b16.svg",
     "main.0db07868.css.map": "/collegewear/static/css/main.0db07868.css.map",
-    "main.1f11eeac.js.map": "/collegewear/static/js/main.1f11eeac.js.map",
+    "main.6ace6ff2.js.map": "/collegewear/static/js/main.6ace6ff2.js.map",
     "787.58609057.chunk.js.map": "/collegewear/static/js/787.58609057.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0db07868.css",
-    "static/js/main.1f11eeac.js"
+    "static/js/main.6ace6ff2.js"
   ]
 }
