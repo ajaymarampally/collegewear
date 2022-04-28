@@ -120,9 +120,7 @@ function Products(props) {
     const filter_flag = useSelector(state=>state.filter.filter_flag);
     const price_flag = useSelector(state=>state.filter.price_flag);
 
-    let price_arr = useSelector(state=>state.price.price_filter_items);
-
-    console.log('price_arr in product_page',price_arr);
+    console.log('price_arr in product_page',pricearr);
 
     console.log('flags',filter_flag,price_flag)
     const convert_to_int = (value) => {
@@ -136,12 +134,15 @@ function Products(props) {
     }
 
     const price_filter_function = (props) => {
+        console.log('price_filter_function called')
         //init price_arr to empty array
         setPriceArr([]);
         set_filter_flag();
         let temp = [];
         console.log('flags',price_flag,filter_flag)
+
         filter_arr.map(element=>{
+            console.log('element product_price props[1]',element.product_price,props[1])
             if(convert_to_int(element.product_price)>=(props[1])){
                 //
                  }
@@ -153,8 +154,9 @@ function Products(props) {
         })
         console.log('temp_arr',temp)
         //replace price_arr with temp , change the filter array values to temp
-        dispatch(filter_actions.set_filter_arr(temp));
         setPriceArr(temp);
+        dispatch(filter_actions.set_filter_arr(temp));
+
     }
 
 

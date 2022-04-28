@@ -28,15 +28,15 @@ const navigator = useNavigate();
     dispatch(data_actions.set_cart_details({items_sub_total: cart_total }));
     navigator('/payment');
 }
-let cart_flag = true;
+const [cart_flag, set_cart_flag] = React.useState(true);
 React.useEffect(() => {
     if(cart_items.length === 0){
-      cart_flag = false;
+      set_cart_flag(false);
     }
     else{
-        cart_flag = true;
+        set_cart_flag(true);
     }
-}, []);
+}, [cart_items]);
 console.log('cart_flag',cart_flag);
   return (
     <><div>
@@ -79,7 +79,7 @@ console.log('cart_flag',cart_flag);
                             <Form.Label><h2>Card Holder Name</h2></Form.Label>
                             <Form.Control type="name" defaultValue={card_holder_name} required />
                             </Form.Group>
-                            <a onClick={()=>navigate_to_cart()}>
+                            <a onClick={()=>{cart_flag && navigate_to_cart()}}>
                             <Button className="w-100 login-btn mt-4">
                                 Confirm Payment
                             </Button>
