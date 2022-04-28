@@ -43,6 +43,7 @@ function App() {
           <Route path='/login/products/product_desc/*' element={<Product_desc />} />
           <Route path='/signup_comp/products/*' element={<Products />} />
           <Route path='/signup_comp/products/product_desc/*' element={<Product_desc />} />
+          <Route path='/collegewear/*' element={<Main />} />
         </Routes>
       </Router>
     </div>
