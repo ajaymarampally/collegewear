@@ -15,6 +15,13 @@ localhost:3000/
 git clone https://github.com/ajaymarampally/collegewear.git
 ```
 
+<h2>Change the Directory<h2/>
+
+```
+cd collegewear
+```
+ 
+  
 <h2>Install the necessary Dependencies<h2/>
 
 ```
