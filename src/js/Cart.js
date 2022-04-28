@@ -9,6 +9,7 @@ import { Form, Button, Card, Alert } from "react-bootstrap"
 import {useNavigate} from 'react-router-dom';
 import {data_actions} from '../store/data_slice'
 import cart_empty from '../img/cart_empty.jpeg'
+import {cart_actions} from '../store/cart_slice'
 
 function Cart() {
 const navigator = useNavigate();
@@ -26,6 +27,9 @@ const navigator = useNavigate();
     //send a dispatch to the store to update the cart
     console.log('sending dispatch to update the payment page')
     dispatch(data_actions.set_cart_details({items_sub_total: cart_total }));
+    //set cart_items to empty array
+    console.log('resetting cart items');
+    dispatch(cart_actions.reset_cart());
     navigator('/payment');
 }
 const [cart_flag, set_cart_flag] = React.useState(true);

@@ -86,6 +86,12 @@ const cart_slice = createSlice({
                 state.cart_total_quantity -= quantity_var;
             }
             console.log('cart_total_after_remove_from_cart', state.total_price);
+        },
+        reset_cart: (state, action) => {
+            console.log('reset cart called');
+            state.cart_items = [];
+            state.total_price = 0;
+            state.cart_total_quantity = 0;
         }
     }
 });

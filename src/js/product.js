@@ -28,6 +28,8 @@ function Products(props) {
     const [filtered_arr, setFilteredArr] = React.useState([]);
     const [pricearr, setPriceArr] = React.useState([]);
     const adv_flag = useSelector(state => state.filter.adv_flag);
+    const [price_default, setPriceDefault] = React.useState(0);
+
     const dispatch_to_filter_slice = () => {
         
         dispatch(filter_actions.set_filter_arr(elem_arr));
@@ -47,8 +49,13 @@ function Products(props) {
         else{
             ten_percent_flag = false;
         }
+        setPriceDefault(0)
     },[])
 
+
+    React.useEffect(() => {
+        setPriceDefault(0)
+    },[price_default])
 
     console.log('ten_percent_flag',ten_percent_flag)
     console.log('36 items in product_page',elem_arr)
@@ -120,6 +127,7 @@ function Products(props) {
     const filter_flag = useSelector(state=>state.filter.filter_flag);
     const price_flag = useSelector(state=>state.filter.price_flag);
 
+ 
     console.log('price_arr in product_page',pricearr);
 
     console.log('flags',filter_flag,price_flag)
@@ -188,11 +196,13 @@ function Products(props) {
             blue:7,
             red:8,
             gray:9,
-            price_default:0
         });
         dispatch(filter_actions.clear_filter(props.cart_items));
         //send a dispatch to reset filter_flag and price_flag
         dispatch(filter_actions.reset_filter_flags());
+        console.log('setting default price')
+        setPriceDefault(0);
+        window.location.reload();
 
     }
 
@@ -210,6 +220,62 @@ function Products(props) {
                     <a className='mt-2 btn btn-dark' onClick={()=>{clear_filter_function({cart_items:elem_arr});}}>
                         Clear Filter  
                     </a>
+                    <div>
+                        <h1 className='mt-2'>Color Filter</h1>
+                        <FormControl>
+                        <FormLabel id="demo-radio-buttons-group-label"></FormLabel>
+                        <FormControlLabel
+                                control={
+                                <Checkbox
+                                    checked={checkbox_arr.BLACK}
+                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.BLACK,checkbox_arr.black,elem_arr]))}}
+                                    name="BLACK"
+                                />
+                                }
+                                label="BLACK"
+                            />
+                            <FormControlLabel
+                                control={
+                                <Checkbox
+                                    checked={checkbox_arr.WHITE}
+                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.WHITE,checkbox_arr.white,elem_arr]))}}
+                                    name="WHITE"
+                                />
+                                }
+                                label="WHITE"
+                            />
+                            <FormControlLabel
+                                control={
+                                <Checkbox
+                                    checked={checkbox_arr.BLUE}
+                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.BLUE,checkbox_arr.blue,elem_arr]))}}
+                                    name="BLUE"
+                                />
+                                }
+                                label="BLUE"
+                            />
+                            <FormControlLabel
+                                control={
+                                <Checkbox
+                                    checked={checkbox_arr.RED}
+                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.RED,checkbox_arr.red,elem_arr]))}}
+                                    name="RED"
+                                />
+                                }
+                                label="RED"
+                            />
+                            <FormControlLabel
+                                control={
+                                <Checkbox
+                                    checked={checkbox_arr.GRAY}
+                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.GRAY,checkbox_arr.gray,elem_arr]))}}
+                                    name="GRAY"
+                                />
+                                }
+                                label="GRAY"
+                            />
+                        </FormControl>
+                    </div>
                     <div className='mt-2'>
                     <h1 className='mt-2'>Size Filter</h1>
                     <FormControl>
@@ -267,62 +333,6 @@ function Products(props) {
                     </FormControl>
                     </div>
                     <div>
-                        <h1 className='mt-2'>Color Filter</h1>
-                        <FormControl>
-                        <FormLabel id="demo-radio-buttons-group-label"></FormLabel>
-                        <FormControlLabel
-                                control={
-                                <Checkbox
-                                    checked={checkbox_arr.BLACK}
-                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.BLACK,checkbox_arr.black,elem_arr]))}}
-                                    name="BLACK"
-                                />
-                                }
-                                label="BLACK"
-                            />
-                            <FormControlLabel
-                                control={
-                                <Checkbox
-                                    checked={checkbox_arr.WHITE}
-                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.WHITE,checkbox_arr.white,elem_arr]))}}
-                                    name="WHITE"
-                                />
-                                }
-                                label="WHITE"
-                            />
-                            <FormControlLabel
-                                control={
-                                <Checkbox
-                                    checked={checkbox_arr.BLUE}
-                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.BLUE,checkbox_arr.blue,elem_arr]))}}
-                                    name="BLUE"
-                                />
-                                }
-                                label="BLUE"
-                            />
-                            <FormControlLabel
-                                control={
-                                <Checkbox
-                                    checked={checkbox_arr.RED}
-                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.RED,checkbox_arr.red,elem_arr]))}}
-                                    name="RED"
-                                />
-                                }
-                                label="RED"
-                            />
-                            <FormControlLabel
-                                control={
-                                <Checkbox
-                                    checked={checkbox_arr.GRAY}
-                                    onChange={e=>{handleCheckedChange(e);dispatch(filter_actions.color_filter([checkbox_arr.GRAY,checkbox_arr.gray,elem_arr]))}}
-                                    name="GRAY"
-                                />
-                                }
-                                label="GRAY"
-                            />
-                        </FormControl>
-                    </div>
-                    <div>
                         <h1 className='mt-2'>Discount Filter</h1>
                         <FormControl>
                         <FormLabel id="demo-radio-buttons-group-label"></FormLabel>
@@ -352,7 +362,7 @@ function Products(props) {
                         <h1 className='mt-2'>Price Filter</h1>
                         <Slider
                             aria-label="Price marks"
-                            defaultValue={0}
+                            defaultValue={price_default}
                             step={10}
                             valueLabelDisplay="auto"
                             marks={price_marks}
