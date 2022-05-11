@@ -16,6 +16,8 @@ import {useSelector,useDispatch} from 'react-redux'
 import { search_actions } from "../store/search_slice";
 import { filter_actions } from "../store/filter_slice";
 
+import {Router} from '../App'
+
   
 function Header(){
     const source = product_data;
@@ -71,8 +73,8 @@ function Header(){
 
     //function to handle search selection
     function result_function(e, { result }) {
-    console.log('result section -> navigate to product_page', result.props);
-    navigate('/product_desc', {state:result.props});
+    //Router.replace('/products', { state: result.props })
+    navigate('/products', {state:result.props});
 
   }
     

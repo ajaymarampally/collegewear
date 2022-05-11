@@ -336,3 +336,14 @@ t shirts
                     console.log('pop element',state.filter_arr.length)
                 }
             })
+			
+			
+			
+1.grader install
+
+2.runs onm 
+
+3.distributionm
+
+
+

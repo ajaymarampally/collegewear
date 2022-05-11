@@ -32,9 +32,11 @@ function App() {
           <Route path='/signup_comp' element={<Signup_comp />} />
           <Route path='/product_desc' element={<Product_desc />} />
           <Route path='/products/product_desc' element={<Product_desc />} />
+          <Route path='/product_desc/products' element={<Products />} />
+          <Route path='/product_desc/products/*' element={<Product_desc />} />
           <Route path='/products/*' element={<Products />} />
           <Route path='/cart/*' element={<Products />} />
-          <Route path='cart/product_desc/*' element={<Product_desc />} />
+          <Route path='/cart/product_desc/*' element={<Products />} />
           <Route path='/test' element={<Test />} />
           <Route path='/payment' element={<Payment />} />
           <Route path='/payment/*' element={<Products />} />
@@ -66,5 +68,9 @@ function App() {
     </div>
   );
 }
+
+//export router 
+
+export {Router};
 
 export default App;
